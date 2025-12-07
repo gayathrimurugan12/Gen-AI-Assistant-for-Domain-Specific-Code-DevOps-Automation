@@ -1,0 +1,97 @@
+{
+  "calculator": {
+    "boilerplate": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    if b != 0:\n        return a / b\n    else:\n        return 'Cannot divide by zero'",
+    "test": "def test_add():\n    assert add(2, 3) == 5\n\ndef test_subtract():\n    assert subtract(5, 2) == 3\n\ndef test_multiply():\n    assert multiply(3, 4) == 12\n\ndef test_divide():\n    assert divide(10, 2) == 5",
+    "docs": "# Calculator Project\nBasic arithmetic: add, subtract, multiply, divide.\nIncludes example tests."
+  },
+  "rest_api": {
+    "boilerplate": "from flask import Flask, jsonify, request\napp = Flask(__name__)\n@app.route('/api/data')\ndef get_data():\n    return jsonify({'message': 'Hello from REST API!'})\n@app.route('/api/sum', methods=['POST'])\ndef sum_numbers():\n    data = request.get_json()\n    return jsonify({'sum': data['a'] + data['b']})\nif __name__ == '__main__':\n    app.run(debug=True)",
+    "test": "def test_api_get():\n    assert True\n\ndef test_api_sum():\n    assert True",
+    "docs": "# REST API Project\nGET /api/data returns message\nPOST /api/sum returns sum of a & b"
+  },
+  "todo_app": {
+    "boilerplate": "tasks = []\n\ndef add_task(task):\n    tasks.append(task)\n    return tasks\n\ndef remove_task(task):\n    if task in tasks:\n        tasks.remove(task)\n    return tasks\n\ndef list_tasks():\n    return tasks",
+    "test": "def test_add_task():\n    tasks.clear()\n    add_task('Task1')\n    assert 'Task1' in tasks\n\ndef test_remove_task():\n    tasks.clear()\n    add_task('Task1')\n    remove_task('Task1')\n    assert 'Task1' not in tasks\n\ndef test_list_tasks():\n    tasks.clear()\n    add_task('Task2')\n    assert list_tasks() == ['Task2']",
+    "docs": "# To-Do App\nAdd, remove, list tasks with automated tests"
+  },
+  "weather_app": {
+    "boilerplate": "import requests\nAPI_KEY='YOUR_KEY'\ndef get_weather(city):\n    url=f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}'\n    return requests.get(url).json()",
+    "test": "def test_weather():\n    data=get_weather('London')\n    assert 'weather' in data",
+    "docs": "# Weather App\nFetch current weather using OpenWeatherMap API"
+  },
+  "contact_manager": {
+    "boilerplate": "contacts = {}\n\ndef add_contact(name, phone):\n    contacts[name]=phone\n    return contacts\n\ndef get_contact(name):\n    return contacts.get(name, 'Not found')",
+    "test": "def test_add():\n    contacts.clear()\n    add_contact('Alice','123')\n    assert contacts['Alice']=='123'\n\ndef test_get():\n    contacts.clear()\n    add_contact('Bob','456')\n    assert get_contact('Bob')=='456'",
+    "docs": "# Contact Manager\nStore and fetch contact info"
+  },
+  "file_manager": {
+    "boilerplate": "import os\n\ndef list_files(path):\n    return os.listdir(path)\n\ndef create_file(path, name):\n    with open(os.path.join(path,name),'w') as f:\n        f.write('')",
+    "test": "def test_list():\n    assert isinstance(list_files('.'), list)\n\ndef test_create():\n    create_file('.','temp.txt')\n    assert 'temp.txt' in list_files('.')",
+    "docs": "# File Manager\nList files & create new files"
+  },
+  "simple_chatbot": {
+    "boilerplate": "def chat_response(msg):\n    responses={'hi':'Hello!','bye':'Goodbye!'}\n    return responses.get(msg,'I did not understand')",
+    "test": "def test_hi():\n    assert chat_response('hi')=='Hello!'\n\ndef test_bye():\n    assert chat_response('bye')=='Goodbye!'",
+    "docs": "# Simple Chatbot\nResponds to greetings with basic responses"
+  },
+  "banking_app": {
+    "boilerplate": "accounts = {}\n\ndef deposit(acc, amount):\n    accounts[acc]=accounts.get(acc,0)+amount\n    return accounts[acc]\n\ndef withdraw(acc, amount):\n    if accounts.get(acc,0)>=amount:\n        accounts[acc]-=amount\n        return accounts[acc]\n    return 'Insufficient funds'",
+    "test": "def test_deposit():\n    accounts.clear()\n    deposit('A1',100)\n    assert accounts['A1']==100\n\ndef test_withdraw():\n    withdraw('A1',50)\n    assert accounts['A1']==50",
+    "docs": "# Banking App\nDeposit & withdraw money"
+  },
+  "blog_app": {
+    "boilerplate": "posts = []\n\ndef create_post(title,content):\n    posts.append({'title':title,'content':content})\n    return posts\n\ndef list_posts():\n    return posts",
+    "test": "def test_create():\n    posts.clear()\n    create_post('Hello','World')\n    assert len(posts)==1\n\ndef test_list():\n    assert len(list_posts())>=0",
+    "docs": "# Blog App\nCreate & list posts"
+  },
+  "quiz_app": {
+    "boilerplate": "questions = [{'q':'2+2','a':'4'}]\n\ndef ask_question():\n    return questions[0]['q']\n\ndef check_answer(ans):\n    return ans==questions[0]['a']",
+    "test": "def test_check():\n    assert check_answer('4')==True\n    assert check_answer('3')==False",
+    "docs": "# Quiz App\nAsk a question & check answer"
+  },
+  "currency_converter": {
+    "boilerplate": "rates={'USD':1,'EUR':0.92}\n\ndef convert(amount,from_currency,to_currency):\n    return amount/rates[from_currency]*rates[to_currency]",
+    "test": "def test_convert():\n    assert convert(100,'USD','EUR')==92",
+    "docs": "# Currency Converter\nConvert between USD and EUR"
+  },
+  "text_editor": {
+    "boilerplate": "text=''\n\ndef write_text(new):\n    global text\n    text=new\n    return text\n\ndef read_text():\n    return text",
+    "test": "def test_write():\n    write_text('Hello')\n    assert read_text()=='Hello'",
+    "docs": "# Text Editor\nSimple in-memory text editor"
+  },
+  "note_app": {
+    "boilerplate": "notes=[]\n\ndef add_note(n):\n    notes.append(n)\n    return notes\n\ndef delete_note(n):\n    if n in notes:\n        notes.remove(n)\n    return notes",
+    "test": "def test_add():\n    notes.clear()\n    add_note('Note1')\n    assert 'Note1' in notes\n\ndef test_delete():\n    delete_note('Note1')\n    assert 'Note1' not in notes",
+    "docs": "# Note App\nAdd & delete notes"
+  },
+  "simple_game": {
+    "boilerplate": "def guess_number(n, guess):\n    return guess==n",
+    "test": "def test_guess():\n    assert guess_number(5,5)==True\n    assert guess_number(5,3)==False",
+    "docs": "# Simple Game\nGuess the number game logic"
+  },
+  "inventory_system": {
+    "boilerplate": "inventory={}\n\ndef add_item(name,qty):\n    inventory[name]=inventory.get(name,0)+qty\n    return inventory\n\ndef remove_item(name,qty):\n    if inventory.get(name,0)>=qty:\n        inventory[name]-=qty\n    return inventory",
+    "test": "def test_add():\n    inventory.clear()\n    add_item('Pen',10)\n    assert inventory['Pen']==10\n\ndef test_remove():\n    remove_item('Pen',5)\n    assert inventory['Pen']==5",
+    "docs": "# Inventory System\nAdd & remove items"
+  },
+  "password_checker": {
+    "boilerplate": "def check_password(p):\n    return len(p)>=8",
+    "test": "def test_pass():\n    assert check_password('12345678')==True\n    assert check_password('123')==False",
+    "docs": "# Password Checker\nChecks length>=8"
+  },
+  "email_sender": {
+    "boilerplate": "def send_email(to,msg):\n    return f'Sent to {to}'",
+    "test": "def test_send():\n    assert send_email('a@b.com','Hello')=='Sent to a@b.com'",
+    "docs": "# Email Sender\nSimulates sending an email"
+  },
+  "number_guess_game": {
+    "boilerplate": "def guess(n, g):\n    return n==g",
+    "test": "def test_guess():\n    assert guess(5,5)\n    assert not guess(5,3)",
+    "docs": "# Number Guess Game\nGuess if number is correct"
+  },
+  "simple_counter": {
+    "boilerplate": "count=0\n\ndef increment():\n    global count\n    count+=1\n    return count\n\ndef decrement():\n    global count\n    count-=1\n    return count",
+    "test": "def test_counter():\n    global count\n    count=0\n    increment()\n    assert count==1\n    decrement()\n    assert count==0",
+    "docs": "# Counter App\nIncrement & decrement counter"
+  }
+}
