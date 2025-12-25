@@ -2,40 +2,55 @@
 
 ## Overview:
 
-Gen-AI Assistant is an AI-powered tool that helps developers **generate boilerplate code, unit/integration tests, and structured documentation** automatically.  
-It supports multiple project types like **To-do App,Simple Chatbot,Calculators, REST APIs, and more**, making development faster and more consistent.
+The Generative AI Assistant for Domain-Specific Code & DevOps Automation is an AI-based tool that helps users create code, test cases, and documentation using simple text prompts.
+Users can choose a programming language such as Python, C, or Java, and the system automatically generates the required basic code structure for the selected project.
+This tool saves time, maintains code consistency, and helps students and developers build projects faster.
 
 ## Features:
 
-- Domain-specific boilerplate code generation  
-- Automatic test case generation (unit & integration tests)  
-- Documentation generation** (docstrings and README content)  
-- Web interface for interactive usage  
-- Supports multiple project types  
-- Team-friendly workflow via GitHub collaboration
+-Prompt-based code generation
+
+-Multi-language support (Python, C, Java)
+
+-Domain-specific project templates
+
+-Automatic unit and integration test generation
+
+-Documentation generation (README and inline comments)
+
+-Web-based interactive interface
+
+-GitHub-friendly team collaboration
+
+-Consistent and reusable code structure
 
 ## Software tools used :
 
-- Python for backend processing
+-Python – Core backend logic
 
-- Flask for the web interface
+-Flask – Web application framework
 
-- VS Code as the IDE
+-VS Code – Development environment
 
-- Git & GitHub for version control
+-Git & GitHub – Version control and collaboration
 
-- HTML/CSS (Bootswatch) for frontend UI
+-HTML/CSS (Bootswatch) – User interface design
 
 ## Project Architecture:
 
-A diagram showing how modules interact:
+The system follows a modular architecture to ensure scalability and maintainability.
 
-- main.py
-- app.py → Flask server
-- modules/code_generator.py → Generates boilerplate
-- modules/test_generator.py → Generates tests
-- modules/docs_generator.py → Generates documentation
-- dataset/dataset.json → Project templates
+-main.py – Entry point of the application
+
+-app.py – Flask server handling user requests
+
+-modules/code_generator.py – Generates boilerplate code based on prompt and language
+
+-modules/test_generator.py – Creates unit and integration test cases
+
+-modules/docs_generator.py – Generates documentation (README, docstrings)
+
+-dataset/dataset.json – Stores predefined templates for each project type
 
 ## Supported Project Type:
 
@@ -68,49 +83,35 @@ Shows the reviewers that your project can grow further:
 - Add code syntax highlighting in web output
 
 ## Output:
-
-<img width="1906" height="897" alt="image" src="https://github.com/user-attachments/assets/e01bc544-a528-43f5-a75b-b475b1b8cb72" />
+<img width="1920" height="1080" alt="Screenshot (277)" src="https://github.com/user-attachments/assets/9f80d5fb-0a8b-45d6-acc9-4638a0efd2f7" />
 
 
 ##### Example1: To-do App
+<img width="1920" height="1080" alt="Screenshot (278)" src="https://github.com/user-attachments/assets/55d604cb-e6aa-4cfc-85d9-ea39fcb2ac1b" />
 
-<img width="1907" height="904" alt="image" src="https://github.com/user-attachments/assets/d219d048-6bf5-463e-b65c-56f0a64aca76" />
-
-
-<img width="1892" height="886" alt="image" src="https://github.com/user-attachments/assets/024cfe76-bc1e-48bd-984d-c9cf8819e7a4" />
-
-
-<img width="1906" height="897" alt="image" src="https://github.com/user-attachments/assets/2e6270dc-23c6-4c9e-ab2a-673b5945dde0" />
-
-
-<img width="1888" height="891" alt="image" src="https://github.com/user-attachments/assets/52068aef-aec2-41ed-8f2d-9eaebd8b6f61" />
+<img width="1920" height="1080" alt="Screenshot (279)" src="https://github.com/user-attachments/assets/0136a1fb-c7db-4bcf-8f15-11777e93f62e" />
 
 
 
 ##### Example2: Weather App
 
-<img width="1904" height="904" alt="image" src="https://github.com/user-attachments/assets/328cd213-01c5-405c-899a-c6e05d74e04c" />
+<img width="1920" height="1080" alt="Screenshot (280)" src="https://github.com/user-attachments/assets/3d7f8c73-d85d-4619-aa66-c76adf65963a" />
 
-
-<img width="1886" height="871" alt="image" src="https://github.com/user-attachments/assets/a0a09e5f-3881-472f-8c90-2d5074cc4f92" />
+<img width="1920" height="1080" alt="Screenshot (281)" src="https://github.com/user-attachments/assets/4beb324d-5533-4d44-950a-c915322190df" />
 
 ##### Example3: Calculator
 
-<img width="1902" height="902" alt="image" src="https://github.com/user-attachments/assets/6daa00e8-f2ea-4bcd-a0b3-9f56edc38d73" />
+<img width="1920" height="1080" alt="Screenshot (282)" src="https://github.com/user-attachments/assets/5a3881cb-f9f9-4395-86d6-3aaa5d7cf929" />
 
-
-<img width="1901" height="887" alt="image" src="https://github.com/user-attachments/assets/d034410f-2a86-4553-8524-8256ec6efeac" />
-
-
-<img width="1883" height="898" alt="image" src="https://github.com/user-attachments/assets/534c08e4-837a-44b8-8274-2e7078928d38" />
+<img width="1920" height="1080" alt="Screenshot (283)" src="https://github.com/user-attachments/assets/84e4c28d-57b6-461b-bd98-b6d3442b44a6" />
 
 
 ##### Example4: Simple Chatbot
 
-<img width="1896" height="897" alt="image" src="https://github.com/user-attachments/assets/7b9ce2e6-48c5-4c60-ab08-75bccadd6298" />
+<img width="1920" height="1080" alt="Screenshot (284)" src="https://github.com/user-attachments/assets/e8fb6322-2dfe-4d5d-b2fe-7458892effe1" />
 
+<img width="1920" height="1080" alt="Screenshot (285)" src="https://github.com/user-attachments/assets/c4e9d8a1-1b57-4947-b524-5d4da5dd5469" />
 
-<img width="1895" height="880" alt="image" src="https://github.com/user-attachments/assets/562b6495-7dcf-4590-bff1-978d680bd681" />
 
 
 ## Conclusion
