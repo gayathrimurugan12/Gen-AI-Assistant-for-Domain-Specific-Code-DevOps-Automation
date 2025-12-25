@@ -1,0 +1,271 @@
+{
+  "calculator": {
+    "boilerplate": {
+      "python": "def add(a, b):\n    return a + b\n\ndef subtract(a, b):\n    return a - b\n\ndef multiply(a, b):\n    return a * b\n\ndef divide(a, b):\n    if b != 0:\n        return a / b\n    else:\n        return 'Cannot divide by zero'",
+      "c": "#include <stdio.h>\nint add(int a,int b){return a+b;}\nint subtract(int a,int b){return a-b;}\nint multiply(int a,int b){return a*b;}\ndouble divide(int a,int b){ return b!=0 ? (double)a/b : 0; }",
+      "java": "public class Calculator {\n  public static int add(int a,int b){return a+b;}\n  public static int subtract(int a,int b){return a-b;}\n  public static int multiply(int a,int b){return a*b;}\n  public static double divide(int a,int b){ return b!=0 ? (double)a/b : 0; }\n}"
+    },
+    "test": {
+      "python": "def test_add():\n    assert add(2,3)==5",
+      "c": "int main(){ if(add(2,3)!=5) return 1; return 0; }",
+      "java": "public class CalculatorTest {\n  public static void main(String[] args){ assert Calculator.add(2,3)==5; }\n}"
+    },
+    "docs": {
+      "python": "The Calculator project allows users to perform basic arithmetic operations including addition, subtraction, multiplication, and division. It is implemented in a simple and modular way to support further extension. The project includes example tests to verify the correctness of each operation. This makes it easy for beginners to understand and use.",
+      "c": "This Calculator program is designed to perform basic arithmetic operations such as add, subtract, multiply, and divide. It uses a simple C structure to allow easy modifications and expansion. Example test cases demonstrate its functionality and correctness. The program serves as an educational tool for learning basic programming concepts.",
+      "java": "The Calculator project in Java provides methods for performing addition, subtraction, multiplication, and division. It is designed with a modular structure to allow easy extension and maintainability. Built-in tests ensure the correctness of each operation. The project is suitable for beginners to learn basic arithmetic operations in Java."
+    }
+  },
+
+  "rest_api": {
+    "boilerplate": {
+      "python": "from flask import Flask, jsonify\napp=Flask(__name__)\n@app.route('/api')\ndef hello(): return jsonify({'msg':'Hello'})\nif __name__=='__main__': app.run(debug=True)",
+      "c": "// REST APIs in C require frameworks; placeholder function\nvoid api(){ printf(\"Hello from C API\"); }",
+      "java": "import static spark.Spark.*;\npublic class RestAPI{\n  public static void main(String[] args){ get(\"/api\", (req,res)->\"Hello from Java API\"); }\n}"
+    },
+    "test": {
+      "python": "def test_api(): assert True",
+      "c": "int main(){ api(); return 0; }",
+      "java": "public class APITest{ public static void main(String[] args){ System.out.println(\"Test\"); }}"
+    },
+    "docs": {
+      "python": "The REST API project allows users to retrieve and send data using HTTP requests. It is implemented with Flask, providing GET and POST endpoints. Test cases ensure that responses are returned correctly and consistently. This project demonstrates basic web server creation and API handling in Python.",
+      "c": "This REST API project in C demonstrates handling HTTP requests using appropriate libraries. It provides endpoints for retrieving and posting data. Tests verify proper response handling. The project teaches networking concepts and API development in C.",
+      "java": "The REST API project in Java allows clients to send and retrieve data via HTTP endpoints. It uses frameworks like Spring Boot to handle GET and POST requests. Tests ensure that the API functions correctly. This project introduces web services and RESTful design in Java."
+    }
+  },
+
+  "todo_app": {
+    "boilerplate": {
+      "python": "tasks=[]\ndef add_task(t): tasks.append(t)\n\ndef remove_task(t):\n    if t in tasks: tasks.remove(t)\n\ndef list_tasks(): return tasks",
+      "c": "#include <stdio.h>\nint task_count=0;\nchar* tasks[10];\nvoid add_task(char* t){ tasks[task_count++]=t; }\nvoid remove_task(char* t){ /* placeholder */ }",
+      "java": "import java.util.*;\nclass TodoApp{\n  List<String> tasks=new ArrayList<>();\n  void addTask(String t){ tasks.add(t); }\n  void removeTask(String t){ tasks.remove(t); }\n  List<String> listTasks(){ return tasks; }\n}"
+    },
+    "test": {
+      "python": "tasks.clear(); add_task('A'); assert 'A' in tasks",
+      "c": "int main(){ add_task(\"A\"); return 0; }",
+      "java": "public static void main(String[] args){ TodoApp app=new TodoApp(); app.addTask(\"A\"); assert app.listTasks().contains(\"A\"); }"
+    },
+    "docs": {
+      "python": "The To-Do App allows users to manage tasks by adding, removing, and listing them. It is implemented in a modular way for easy extension and testing. The app includes test cases to ensure proper task management functionality. This project helps learners understand list manipulation and basic CRUD operations in Python.",
+      "c": "This To-Do application in C allows users to create, delete, and display tasks efficiently. It uses arrays and functions to organize tasks and ensure maintainability. Example test cases verify that tasks are handled correctly. The program demonstrates basic data structures and procedural programming techniques.",
+      "java": "The Java To-Do App enables users to add, remove, and view tasks in an organized manner. It is built using classes and methods for better structure and maintainability. Tests are included to validate all functionalities. This project serves as an introductory exercise for object-oriented programming concepts in Java."
+    }
+  },
+
+  "weather_app": {
+    "boilerplate": {
+      "python": "import requests\nAPI_KEY='YOUR_KEY'\ndef get_weather(city):\n    url=f'http://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}'\n    return requests.get(url).json()",
+      "c": "// C Weather API placeholder\nvoid get_weather(){ printf(\"C API call placeholder\"); }",
+      "java": "import java.net.*;\nclass WeatherApp{\n  void getWeather(String city){ System.out.println(\"Java API placeholder\"); }\n}"
+    },
+    "test": {
+      "python": "data=get_weather('London'); assert 'weather' in data",
+      "c": "int main(){ get_weather(); return 0; }",
+      "java": "public static void main(String[] args){ new WeatherApp().getWeather(\"London\"); }"
+    },
+    "docs": {
+      "python": "The Weather App fetches current weather data for a given city using the OpenWeatherMap API. It demonstrates API integration and JSON data handling. Test cases confirm that the returned data contains valid weather information. This project helps learners understand external API usage in Python.",
+      "c": "This Weather App in C retrieves weather information using network requests to an API. It parses the response and presents weather details. Tests ensure correct API responses are handled. The project demonstrates networking and data parsing techniques in C.",
+      "java": "The Java Weather App fetches real-time weather data from OpenWeatherMap API. It handles JSON responses and displays relevant information. Tests verify that the data is correctly parsed. The project introduces API integration and data processing in Java."
+    }
+  },
+
+  "simple_chatbot": {
+    "boilerplate": {
+      "python": "def chat(msg): responses={'hi':'Hello','bye':'Bye'}; return responses.get(msg,'...?')",
+      "c": "#include <stdio.h>\nvoid chat(char* msg){ printf(\"Hello\"); }",
+      "java": "import java.util.*;\nclass ChatBot{ Map<String,String> r=Map.of(\"hi\",\"Hello\",\"bye\",\"Bye\"); String chat(String m){ return r.getOrDefault(m,\"...\"); }}"
+    },
+    "test": {
+      "python": "assert chat('hi')=='Hello'",
+      "c": "int main(){ chat(\"hi\"); return 0; }",
+      "java": "public static void main(String[] args){ ChatBot cb=new ChatBot(); cb.chat(\"hi\"); }"
+    },
+    "docs": {
+      "python": "The Simple Chatbot responds to basic greetings and messages from users. It uses a dictionary to map user inputs to predefined responses. Test cases ensure correct responses are returned for given inputs. This project teaches basic logic and conditional handling in Python.",
+      "c": "This Simple Chatbot in C provides responses to user input using condition checks and string comparisons. Tests verify correct responses for sample inputs. The project demonstrates handling user input and decision making in C. It is ideal for beginners learning basic program flow.",
+      "java": "The Java Simple Chatbot answers simple messages using predefined mappings. It is structured with methods to handle input and return responses. Tests ensure that the chatbot behaves as expected. This project introduces basic Java programming and conditional logic."
+    }
+  },
+
+  "simple_counter": {
+    "boilerplate": {
+      "python": "count=0\ndef increment(): global count; count+=1; return count\ndef decrement(): global count; count-=1; return count",
+      "c": "int count=0; int increment(){ return ++count; } int decrement(){ return --count; }",
+      "java": "int count=0; int increment(){ return ++count; } int decrement(){ return --count; }"
+    },
+    "test": {
+      "python": "count=0; increment(); assert count==1; decrement(); assert count==0",
+      "c": "int main(){ increment(); decrement(); return 0; }",
+      "java": "public static void main(String[] args){ increment(); decrement(); }"
+    },
+    "docs": {
+      "python": "The Simple Counter app allows incrementing and decrementing a counter value. It uses global variables and functions to manage the counter. Test cases verify that the increment and decrement operations work correctly. This project demonstrates state management and function usage in Python.",
+      "c": "This Simple Counter in C maintains a counter using global variables and functions. Tests confirm correct increment and decrement operations. The project demonstrates basic arithmetic operations and state handling in C. It is suitable for beginners learning procedural programming.",
+      "java": "The Java Simple Counter allows users to increase or decrease a counter using class methods. Tests ensure the counter updates correctly. The project introduces object-oriented design and method usage. It is a simple exercise to understand Java class structures."
+    }
+  },
+
+  "blog_app": {
+    "boilerplate": {
+      "python": "posts=[]\ndef create_post(title,content): posts.append({'title':title,'content':content})\ndef list_posts(): return posts",
+      "c": "#include <stdio.h>\nchar* posts[10]; int post_count=0;\nvoid create_post(char* t,char* c){ posts[post_count++]=t; }",
+      "java": "import java.util.*;\nclass BlogApp{\n  List<Map<String,String>> posts=new ArrayList<>();\n  void createPost(String t,String c){ posts.add(Map.of(\"title\",t,\"content\",c)); }\n  List<Map<String,String>> listPosts(){ return posts; }\n}"
+    },
+    "test": {
+      "python": "posts.clear(); create_post('A','B'); assert len(posts)==1",
+      "c": "int main(){ create_post(\"A\",\"B\"); return 0; }",
+      "java": "public static void main(String[] args){ BlogApp b=new BlogApp(); b.createPost(\"A\",\"B\"); assert b.listPosts().size()==1; }"
+    },
+    "docs": {
+      "python": "The Blog App lets users create and list posts easily. Each post contains a title and content, and the system maintains them in memory. Test cases ensure that post creation and listing work correctly. This project teaches basic data management and list operations in Python.",
+      "c": "This Blog program in C allows users to create posts and view all existing posts. It uses structs and arrays to store post information efficiently. Test functions confirm that posts are created and retrieved correctly. The project demonstrates the use of basic data structures in C.",
+      "java": "The Java Blog App provides functionality for creating and viewing blog posts. It uses classes to represent posts and lists to store them, with proper encapsulation. Test cases validate the correct creation and retrieval of posts. This project helps learners understand OOP principles and data handling in Java."
+    }
+  },
+
+  "quiz_app": {
+    "boilerplate": {
+      "python": "questions=[{'q':'2+2','a':'4'}]\ndef ask_question(): return questions[0]['q']\ndef check_answer(ans): return ans==questions[0]['a']",
+      "c": "#include <stdio.h>\nchar* question=\"2+2\";\nint check_answer(char* ans){ return strcmp(ans,\"4\")==0; }",
+      "java": "class QuizApp{\n  String question=\"2+2\";\n  boolean checkAnswer(String ans){ return ans.equals(\"4\"); }\n}"
+    },
+    "test": {
+      "python": "assert check_answer('4'); assert not check_answer('3')",
+      "c": "int main(){ return check_answer(\"4\")?0:1; }",
+      "java": "public static void main(String[] args){ QuizApp q=new QuizApp(); assert q.checkAnswer(\"4\"); }"
+    },
+    "docs": {
+      "python": "The Currency Converter app allows conversion between different currencies using predefined exchange rates. It demonstrates simple arithmetic operations and modular code design. Test cases verify correct conversions. This project helps learners understand calculations and data manipulation in Python.",
+      "c": "This Currency Converter program in C converts amounts between currencies using fixed rates. Functions are used to organize conversion logic clearly. Test functions confirm the correctness of conversions. The project teaches arithmetic operations and basic procedural programming.",
+      "java": "The Java Currency Converter converts amounts between currencies using stored rates. It uses methods for conversion and includes tests to ensure accuracy. This project illustrates basic calculations and modular code design in Java. It is ideal for beginners learning arithmetic and method usage."
+    }
+  },
+
+  "currency_converter": {
+    "boilerplate": {
+      "python": "rates={'USD':1,'EUR':0.92}\ndef convert(amount,from_currency,to_currency): return amount/rates[from_currency]*rates[to_currency]",
+      "c": "#include <stdio.h>\ndouble convert(double amt,char* from,char* to){ return amt*0.92; }",
+      "java": "import java.util.*;\nclass CurrencyConverter{\n  Map<String,Double> rates=Map.of(\"USD\",1.0,\"EUR\",0.92);\n  double convert(double amt,String from,String to){ return amt/rates.get(from)*rates.get(to); }\n}"
+    },
+    "test": {
+      "python": "assert convert(100,'USD','EUR')==92",
+      "c": "int main(){ convert(100,\"USD\",\"EUR\"); return 0; }",
+      "java": "public static void main(String[] args){ new CurrencyConverter().convert(100,\"USD\",\"EUR\"); }"
+    },
+     "docs": {
+      "python": "The Currency Converter app converts amounts between different currencies using predefined exchange rates. It is structured with functions to handle conversion logic. Test cases verify that conversions are accurate. This project helps learners understand arithmetic operations and modular programming in Python.",
+      "c": "This Currency Converter in C performs currency conversions using stored exchange rates. Functions are used to manage conversion logic. Tests ensure calculations are correct. The project teaches arithmetic operations and procedural programming techniques.",
+      "java": "The Java Currency Converter converts between currencies using stored exchange rates. It uses methods to organize conversion logic. Test cases verify correct conversions. This project introduces basic calculations and object-oriented method design in Java."
+    }
+  },
+
+  "text_editor": {
+    "boilerplate": {
+      "python": "text=''\ndef write_text(new): global text; text=new; return text\ndef read_text(): return text",
+      "c": "#include <stdio.h>\nchar text[100]; void write_text(char* t){ strcpy(text,t); } char* read_text(){ return text; }",
+      "java": "class TextEditor{\n  String text;\n  void writeText(String t){ text=t; }\n  String readText(){ return text; }\n}"
+    },
+    "test": {
+      "python": "write_text('Hello'); assert read_text()=='Hello'",
+      "c": "int main(){ write_text(\"Hello\"); return 0; }",
+      "java": "public static void main(String[] args){ TextEditor e=new TextEditor(); e.writeText(\"Hello\"); }"
+    },
+    "docs": {
+      "python": "The Text Editor app allows users to write and read text in memory. It uses global variables and functions for text management. Test cases verify that text is stored and retrieved correctly. This project demonstrates state management and function handling in Python.",
+      "c": "This Text Editor in C allows users to store and retrieve text using buffers and functions. Tests ensure correct writing and reading of text. The project demonstrates basic memory management and procedural programming in C.",
+      "java": "The Java Text Editor provides functionality to write and read text using class methods. Tests confirm that text operations work correctly. The project introduces object-oriented programming and state handling in Java."
+    }
+  },
+
+  "note_app": {
+    "boilerplate": {
+      "python": "notes=[]\ndef add_note(n): notes.append(n)\ndef delete_note(n): notes.remove(n) if n in notes else None",
+      "c": "#include <stdio.h>\nchar* notes[10]; int note_count=0;\nvoid add_note(char* n){ notes[note_count++]=n; }\nvoid delete_note(char* n){ /* placeholder */ }",
+      "java": "import java.util.*;\nclass NoteApp{\n  List<String> notes=new ArrayList<>();\n  void addNote(String n){ notes.add(n); }\n  void deleteNote(String n){ notes.remove(n); }\n}"
+    },
+    "test": {
+      "python": "notes.clear(); add_note('A'); assert 'A' in notes",
+      "c": "int main(){ add_note(\"A\"); return 0; }",
+      "java": "public static void main(String[] args){ NoteApp n=new NoteApp(); n.addNote(\"A\"); }"
+    },
+    "docs": {
+      "python": "The Note App allows users to add and delete notes easily. It uses lists and functions to manage the collection of notes. Test cases confirm that notes are added and removed correctly. This project teaches basic data structures and CRUD operations in Python.",
+      "c": "This Note App in C enables users to add and remove notes using arrays and functions. Tests verify correct addition and deletion of notes. The project demonstrates handling dynamic data using arrays. It is suitable for beginners learning C programming.",
+      "java": "The Java Note App allows users to create and delete notes using classes and lists. Test cases ensure proper note management. The project introduces object-oriented design and data handling in Java."
+    }
+  },
+
+  "inventory_system": {
+    "boilerplate": {
+      "python": "inventory={}\ndef add_item(name,qty): inventory[name]=inventory.get(name,0)+qty\ndef remove_item(name,qty): inventory[name]-=qty if inventory.get(name,0)>=qty else 0",
+      "c": "#include <stdio.h>\nint inventory[10]; void add_item(int id,int qty){ inventory[id]+=qty; }\nvoid remove_item(int id,int qty){ if(inventory[id]>=qty) inventory[id]-=qty; }",
+      "java": "import java.util.*;\nclass Inventory{\n  Map<String,Integer> items=new HashMap<>();\n  void addItem(String n,int q){ items.put(n,items.getOrDefault(n,0)+q); }\n  void removeItem(String n,int q){ if(items.getOrDefault(n,0)>=q) items.put(n,items.get(n)-q); }\n}"
+    },
+    "test": {
+      "python": "inventory.clear(); add_item('Pen',10); assert inventory['Pen']==10",
+      "c": "int main(){ add_item(0,10); remove_item(0,5); return 0; }",
+      "java": "public static void main(String[] args){ Inventory inv=new Inventory(); inv.addItem(\"Pen\",10); }"
+    },
+     "docs": {
+      "python": "The Inventory System manages items by allowing users to add or remove them. It uses dictionaries to store item names and quantities. Test cases confirm that inventory operations work as expected. This project teaches basic data management and dictionary usage in Python.",
+      "c": "This Inventory System in C allows adding and removing items using structs and arrays. Tests verify the correctness of operations. The project demonstrates basic data storage and manipulation techniques. It is ideal for learning procedural programming concepts.",
+      "java": "The Java Inventory System lets users manage items and quantities using classes and maps. Test cases ensure correct addition and removal of items. The project teaches object-oriented data handling and inventory management in Java."
+    }
+  },
+
+  "password_checker": {
+    "boilerplate": {
+      "python": "def check_password(p): return len(p)>=8",
+      "c": "#include <string.h>\nint check_password(char* p){ return strlen(p)>=8; }",
+      "java": "class PasswordChecker{ boolean check(String p){ return p.length()>=8; } }"
+    },
+    "test": {
+      "python": "assert check_password('12345678'); assert not check_password('123')",
+      "c": "int main(){ check_password(\"12345678\"); return 0; }",
+      "java": "public static void main(String[] args){ PasswordChecker pc=new PasswordChecker(); pc.check(\"12345678\"); }"
+    },
+    "docs": {
+      "python": "The Password Checker verifies if a password meets a minimum length requirement. It uses a function to perform validation. Test cases confirm that valid and invalid passwords are correctly identified. This project introduces basic input validation and condition checking in Python.",
+      "c": "This Password Checker in C checks that passwords meet a required length. Functions handle validation and tests confirm correct behavior. The project teaches input handling and conditional statements. It is a simple example for beginners learning C programming.",
+      "java": "The Java Password Checker validates passwords based on length requirements. Methods handle validation and test cases confirm correctness. The project introduces basic string handling and conditional logic in Java."
+    }
+  },
+
+  "email_sender": {
+    "boilerplate": {
+      "python": "def send_email(to,msg): return f'Sent to {to}'",
+      "c": "#include <stdio.h>\nvoid send_email(char* to,char* msg){ printf(\"Sent to %s\",to); }",
+      "java": "class EmailSender{ String sendEmail(String to,String msg){ return \"Sent to \"+to; } }"
+    },
+    "test": {
+      "python": "assert send_email('a@b.com','Hello')=='Sent to a@b.com'",
+      "c": "int main(){ send_email(\"a@b.com\",\"Hello\"); return 0; }",
+      "java": "public static void main(String[] args){ new EmailSender().sendEmail(\"a@b.com\",\"Hello\"); }"
+    },
+    "docs": {
+      "python": "The Email Sender simulates sending emails to specified recipients. It uses functions to manage the sending process. Test cases confirm that emails are sent correctly. This project teaches function design and string formatting in Python.",
+      "c": "This Email Sender in C simulates sending emails using functions. Tests verify correct message handling. The project demonstrates basic procedural programming and I/O handling in C.",
+      "java": "The Java Email Sender simulates sending emails using methods. Test cases ensure that messages are formatted and sent correctly. The project introduces method usage and string handling in Java."
+    }
+  },
+
+  "number_guess_game": {
+    "boilerplate": {
+      "python": "def guess(n,g): return n==g",
+      "c": "#include <stdio.h>\nint guess(int n,int g){ return n==g; }",
+      "java": "class NumberGuess{ boolean guess(int n,int g){ return n==g; } }"
+    },
+    "test": {
+      "python": "assert guess(5,5); assert not guess(5,3)",
+      "c": "int main(){ guess(5,5); return 0; }",
+      "java": "public static void main(String[] args){ new NumberGuess().guess(5,5); }"
+    },
+   "docs": {
+      "python": "The Number Guess Game allows the user to guess a number and checks if it is correct. Functions manage the game logic and evaluation. Test cases ensure that correct and incorrect guesses are handled properly. This project demonstrates control flow and user input handling in Python.",
+      "c": "This Number Guess Game in C lets the user guess a number and checks it against a target. Functions handle game logic and tests verify correct evaluation. The project teaches basic input handling and control structures in C.",
+      "java": "The Java Number Guess Game allows users to guess numbers and verifies correctness. Methods manage the game flow and test cases confirm proper functionality. The project introduces object-oriented programming and control flow in Java."
+    }
+  }
+}
