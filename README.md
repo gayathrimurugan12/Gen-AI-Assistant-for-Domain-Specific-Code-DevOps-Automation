@@ -14,6 +14,18 @@ It supports multiple project types like **To-do App,Simple Chatbot,Calculators, 
 - Supports multiple project types  
 - Team-friendly workflow via GitHub collaboration
 
+## Software tools used :
+
+- Python for backend processing
+
+- Flask for the web interface
+
+- VS Code as the IDE
+
+- Git & GitHub for version control
+
+- HTML/CSS (Bootswatch) for frontend UI
+
 ## Project Architecture:
 
 A diagram showing how modules interact:
